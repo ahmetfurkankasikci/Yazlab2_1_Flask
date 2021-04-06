@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{id}}.Aşamadan Gelen Veriler</h1>
+<h3>Anahtar Kelimeler</h3>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Kelime</th>
+        <th scope="col">Frekansı</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for veriler in link %}
+      <tr>   
+        <td>{{ veriler }}</td>
+        <td>{{link[veriler]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+{% endblock %}

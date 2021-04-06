@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>4.Aşamadan Gelen Veriler</h1>
+
+
+        {% for veriler in scores %}   
+        {{ veriler[1] }} :     %{{ veriler[0] }}<hr>
+      
+      {% endfor %}<br><br>
+
+      <h3>Ana Linkin Anahtar Kelimeleri ve Alakalı Kelimeleri</h3>
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Kelime</th>
+              <th scope="col">Frekansı</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for veriler in link %}
+            <tr>   
+              <td>{{ veriler }}</td>
+              <td>{{link[veriler]}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      <h6>Alakalı Kelimeler</h6>
+      {{synonyms}}     
+
+
+{% endblock %}
